@@ -1,26 +1,4 @@
-/*
 
- Programmer: Courtney Brown
- Date: c2019
- Notes: Demonstration of sending OSC processing and creating artistic application using our previous code
- Purpose/Description:
-
- This program sends values from the mouse to another program.
-
- Uses:
-
- osc::Sender -- sends OSC messages from one program to another (incl. those running on another computer)
-
- Note: still does frame-differencing.
-
- TODO: (for you, student!)
- ++add your squares class
- ++find values to send from your squares class
-    ++either use frame-differencing or optical flow to send data (choose one)
-    ++must use a feature (eg. find max or min of each square + the location + send) to make an art or sound thing happen.
-    ++note that this example uses the mouse locations but you must sub. your mocap squares info.
-
- */
 
 
 #include <opencv2/core/core.hpp>
@@ -242,11 +220,11 @@ void MakeItArtMouseApp::frameDifference(cv::Mat& outputImg)
         //we will go further into image segmentation next week
 //        https://docs.opencv.org/2.4/modules/imgproc/doc/miscellaneous_transformations.html?highlight=threshold#threshold
 //    Parameters:
-//        src – input array (single-channel, 8-bit or 32-bit floating point).
-//        dst – output array of the same size and type as src.
-//        thresh – threshold value.
-//        maxval – maximum value to use with the THRESH_BINARY and THRESH_BINARY_INV thresholding types.
-//        type – thresholding type (see the details below).
+//        src â€“ input array (single-channel, 8-bit or 32-bit floating point).
+//        dst â€“ output array of the same size and type as src.
+//        thresh â€“ threshold value.
+//        maxval â€“ maximum value to use with the THRESH_BINARY and THRESH_BINARY_INV thresholding types.
+//        type â€“ thresholding type (see the details below).
         cv::threshold(outputImg, outputImg, 50, 255, cv::THRESH_BINARY);
 
     }
